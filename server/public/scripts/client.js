@@ -43,7 +43,7 @@ function gettingJoke() {
     })
         .then(function (response) {
             console.log('response from the server', response);
-            render();
+            render(response);//found the error. Didn't use response inside of render
         })
         .catch(function (error) {
             console.log('Error from the server', error);
@@ -61,9 +61,7 @@ function render(jokeArray) {
     for (let item of jokeArray) {
         $('#outputDiv').append(`
             <div>
-                <p>${item.whoseJoke}</p>
-                <p>${item.jokeQuestion}</p>
-                <p>${item.punchLine}</p>
+                <p>${item.whoseJoke} ${item.jokeQuestion} ${item.punchLine}</p>
             </div>
         `)
     }
