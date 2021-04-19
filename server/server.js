@@ -45,9 +45,12 @@ app.get('/joke', (req, res) => {
 app.use(express.static('server/public'));
 
 
+
+//need to come back and check this getting errors from this
+
+//accidnetly deleted a {
 app.post('/joke', (req, res) => {
-  
-  jokes.push(req.body);//add infor when at this part
+  jokes.push(req.body);
   res.sendStatus(201);
 })
 

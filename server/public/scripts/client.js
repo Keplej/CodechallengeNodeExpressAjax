@@ -4,13 +4,15 @@ $( document ).ready( onReady );
 
 function onReady() {
     console.log('DOM ready');
+    $('#addJokeButton').on('click', addingJokes);
+    gettingJoke();
 }
 
 function addingJokes() {
     let funnyJoke = {
-        whoseJoke: $('whoseJokeIn').val(),
-        jokeQuestion: $('questionIn').val(),
-        punchLine: $('punchlineIn').val()
+        whoseJoke: $('#whoseJokeIn').val(),
+        jokeQuestion: $('#questionIn').val(),
+        punchLine: $('#punchlineIn').val()
     }
     console.log('testing funnyJoke', funnyJoke);
     
@@ -51,6 +53,9 @@ function gettingJoke() {
 }
 
 //adding in a render
+
+//this is where we are getting a problem with the server.
+//jokeArray is not iterable TypeError: jokeArray is not iterable
 function render(jokeArray) {
     $('#outputDiv').empty();
     for (let item of jokeArray) {
