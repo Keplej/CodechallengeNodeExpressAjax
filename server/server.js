@@ -34,8 +34,23 @@ let jokes = [
   }
 ];
 
+app.get('/joke', (req, res) => {
+  console.log('testing jokes');
+  res.send(jokes);
+})
+
+
+
 // serve back static files
 app.use(express.static('server/public'));
+
+
+app.post('/joke', (req, res) => {
+  
+  jokes.push();//add infor when at this part
+  res.sendStatus(201);
+})
+
 
 app.listen(PORT, () => {
   console.log('server running on: ', PORT);
