@@ -47,7 +47,7 @@ app.use(express.static('server/public'));
 
 app.post('/joke', (req, res) => {
   
-  jokes.push();//add infor when at this part
+  jokes.push(req.body);//add infor when at this part
   res.sendStatus(201);
 })
 
